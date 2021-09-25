@@ -21,6 +21,205 @@ console.log('Lesson 5');
 // https://medium.com/@stasonmars/%D0%BF%D0%BE%D0%B4%D1%80%D0%BE%D0%B1%D0%BD%D0%BE-%D0%BE-%D0%BC%D0%B5%D1%82%D0%BE%D0%B4%D0%B0%D1%85-apply-call-%D0%B8-bind-%D0%BD%D0%B5%D0%BE%D0%B1%D1%85%D0%BE%D0%B4%D0%B8%D0%BC%D1%8B%D1%85-%D0%BA%D0%B0%D0%B6%D0%B4%D0%BE%D0%BC%D1%83-javascript-%D1%80%D0%B0%D0%B7%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D1%87%D0%B8%D0%BA%D1%83-ddd5f9b06290
 
 
+// console.log(this)
+//
+// function f() {
+//     console.log('this in function decklaration ', this)
+// }
+// window.f();
+//
+// let obj = {name: 'Evgen'};
+// obj.f = f;
+// obj.f();
+
+// obj.test = function () {
+//     console.log('this in function decklaration ', this);
+//     f();
+// }
+// obj.test();
+
+///////////
+
+// function f() {
+//     console.log('this in function decklaration ', this)
+// }
+// let obj = {name: 'Evgen'};
+// let obj2 = {name: 'Hanna'};
+//
+// obj.test = function () {
+//     console.log('this in function decklaration ', this);
+//     f();
+// }
+//
+// obj2.test = obj.test;
+// obj2.test();
+
+/////////////////////
+
+// let obj = {name: 'Evgen'};
+// let obj2 = {name: 'Hanna'};
+//
+// obj.test = function () {
+//     console.log('this in function decklaration ', this);
+//     return function () {
+//         console.log('this in function decklaration ', this);
+//     }
+// }
+//
+// obj2.test = obj.test();
+// obj2.test();
+
+//let testFunc = obj.test();
+//testFunc();
+
+////////////
+
+// let obj = {name: 'Evgen'};
+// let obj2 = {name: 'Hanna'};
+//
+// let arrow = () => {
+//     console.log('this in arrow ', this);
+// }
+//
+// arrow();
+
+
+// let arrow = () => {
+//     console.log('this in arrow ', this);
+// }
+//
+// obj.a = arrow;
+// obj.a();
+
+//////////
+// let obj = {
+//     name: 'Evgen',
+//     a: () => {
+//         console.log('this in arrow ', this);
+//     }
+// };
+//
+// obj.a();
+
+//////////////
+// let obj2 = {name: 'Hanna'};
+// let obj = {
+//     name: 'Evgen',
+//     a: () => {
+//         console.log('this in arrow ', this);
+//         return () => {
+//             console.log('this in arrow ', this);
+//         }
+//     }
+// };
+//
+// obj2.a = obj.a();
+// obj2.a();
+//
+// let obj = {
+//     name: 'Evgen',
+//     a: () => {
+//         console.log('this in arrow ', this);
+//         return function () {
+//             console.log('this in arrow ', this);
+//         }
+//     }
+// };
+//
+// obj2.a = obj.a();
+// obj2.a();
+
+/////////////
+// let obj = {
+//     name: 'Evgen',
+//     f() {
+//         setTimeout(function() {
+//             console.log(this)
+//         }, 0);
+//     },
+// };
+//
+// obj.f();
+
+////////////
+// let obj = {
+//     name: 'Evgen',
+//     f() {
+//         setTimeout(() => console.log(this), 0);
+//     },
+// };
+//
+// obj.f();
+//
+// let obj = {
+//     name: 'Evgen',
+//     f: () => {
+//         setTimeout(() => console.log(this), 0);
+//     },
+// };
+//
+// obj.f();
+
+
+////// Function's methods
+/// Bind
+
+let obj = {
+    name: 'Evgen',
+    testFunc() {
+        console.log('testFunc ', this);
+    }
+};
+
+let obj1 = {
+    name: 'Evgen',
+    testFunc() {
+        return () => {
+            console.log('testFunc ', this);
+        }
+    }
+};
+
+let obj2 = {name: 'Hanna'};
+
+// setTimeout(obj.testFunc,0);
+
+// let bindFunction = obj.testFunc.bind(obj2);
+// bindFunction()
+
+// setTimeout(obj.testFunc.bind(obj),0);
+//setTimeout(obj1.testFunc(),0);
+
+// @ts-ignore
+function someFunc(arg1, arg2, arg3) {
+    // @ts-ignore
+    console.log(this, arg1, arg2, arg3);
+}
+//
+// // let bindFunction = someFunc.bind(obj2, 0, 50);
+// let bindFunction = someFunc.bind(obj2,);
+
+// @ts-ignore
+//bindFunction(500);
+
+
+// function testF() {
+//     console.log('arguments ', arguments);
+// }
+// // @ts-ignore
+// testF( 10, 50, 80);
+//
+// // @ts-ignore
+// let testArrow = (...args) => {}
+
+// let result = someFunc.bind(obj, 50).bind(obj2, 80);
+// result(500);
+
+//someFunc.call(obj2, 50, 100);
+//@ts-ignore
+//someFunc.apply(obj2, [50, 100, 800]);
+
+
 // Task 01
 // Дан объект someObj, реализуйте функцию greeting и присвойте ее ключу объекта с аналогичным именем.
 // Функция должна вернуть строку `My name is ${name}. I am ${age}`, где name и age берутся из свойств объекта

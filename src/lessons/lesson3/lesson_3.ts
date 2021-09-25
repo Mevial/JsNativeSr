@@ -14,7 +14,135 @@ console.log('lesson 3');
 
 // https://jsonplaceholder.typicode.com/posts/1
 // https://habr.com/ru/company/oleg-bunin/blog/417461/?_ga=2.54695343.543933152.1602500664-1040035071.1596811661
+//
+// let c = 10;
+//
+// let prom = new Promise((resolve, reject) => {
+//     let a = 10;
+//     console.log(a);
+//     // ... some code
+//     // some async code
+//     // if (status >= 200 && status < 400) {
+//     //     resolve(request.body)
+//     // } else {
+//     //     reject()
+//     // }
+//     reject(0);
+//     //resolve({result: 5, a});
+// }); // res, rej
+//
+// //console.log(prom)
+// // prom
+// //     .then(res => {
+// //             console.log('then res ', res);
+// //         },
+// //         err => {
+// //             console.log('then err ', err);
+// //             //throw 50;
+// //         }
+// //     )
+// //     .then(res2 => {
+// //             console.log('then res2 ', res2);
+// //         },
+// //         err => {
+// //             console.log('then err ', err);
+// //             //throw 50;
+// //         })
+// //     .then(res3 => {
+// //         console.log('then res3 ', res3);
+// //     }, err2 => {
+// //         console.log('then err2 ', err2);
+// //     });
+//
+// // prom
+// //     .then(res => {
+// //
+// //     })
+// //     .catch(err => {
+// //
+// //     })
+// //     .then(res => {
+// //
+// //     })
+// //     .catch(err => {
+// //
+// //     })
+// //     .then(res => {
+// //
+// //     })
+// //     .catch(err => {
+// //
+// //     })
+//
+//
+// prom
+//     .then(res => {
+//
+//     })
+//     .finally( () => {
+//         console.log('finally 1')
+//     })
+//     .then(res => {
+//
+//     })
+//     .finally(() => {
+//         console.log('finally 2')
+//     })
+//     .then(res => {
+//
+//     })
+//     .finally(() => {
+//         console.log('finally 3')
+//     })
+//     .catch(err => {
+//         console.log('!!!! err ', err)
+//     })
+//     .finally(() => {
+//         console.log('finally 3')
+//     })
+//
+//
+// console.log(c);
+//
+// setInterval(() => {}, 1000);
+//
+// Promise.reject();
+// Promise.resolve();
+//
+// Promise.all([p1, p2, p3]).then(res) // res -> []
+// Promise.allSettled([p1, p2, p3]).then(res) // res -> [object]
+// Promise.race([p1, p2, p3]).then().catch()
 
+// let a = 10
+// async function f() {  // const f = async () => {}
+//     try {
+//         let a = 50;
+//         let b = 100;
+//         let c = a + b;
+//         const result = await Promise.resolve(10);
+//         const result2 = await Promise.resolve(50);
+//         const result3 = await Promise.resolve(15);
+//         console.log(c + result);
+//     } catch (e) {
+//         try {
+//
+//         } catch (e) {
+//
+//         }
+//     } finally {
+//
+//     }
+// }
+// f()
+// console.log(a)
+
+
+// try {
+//     Promise.reject(10).then();
+// } catch (e) {
+//
+// }
 
 // just a plug
-export default ()=>{};
+export default () => {
+};

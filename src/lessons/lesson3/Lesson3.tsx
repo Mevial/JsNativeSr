@@ -8,8 +8,27 @@ const Lesson3 = () => {
     const [searchNameByType, setSearchNameByType] = useState('');
     const [serachResultByType, setSerachResultByType] = useState('');
 
-    const searchFilm = () => {
-        API.searchFilmsByTitle(searchName)
+    // const searchFilm = () => {
+    //     API.searchFilmsByTitle(searchName)
+    //         .then(({data}) => {
+    //             console.log('data ', data);
+    //             const { Error, Response, Search } = data;
+    //             Response === 'True' ? setSerachResult(JSON.stringify(Search)) : setSerachResult(Error);
+    //         })
+    //         .catch( err => {
+    //             console.log('err ', err);
+    //         })
+    // };
+
+    const searchFilm = async () => {
+        try {
+            const { data } = await API.searchFilmsByTitle(searchName);
+            console.log('response ', data);
+            const { Error, Response, Search } = data;
+            Response === 'True' ? setSerachResult(JSON.stringify(Search)) : setSerachResult(Error);
+        } catch (err) {
+            console.log('Error ', err);
+        }
     };
 
     const searchByType = (e: React.MouseEvent<HTMLButtonElement>) => {
