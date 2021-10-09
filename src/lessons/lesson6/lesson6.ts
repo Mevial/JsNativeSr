@@ -1,4 +1,4 @@
-console.log('Lesson 6');
+// console.log('Lesson 6');
 
 // Class
 // https://learn.javascript.ru/classes
@@ -137,25 +137,25 @@ console.log('Lesson 6');
 // console.log(obj)
 
 ////////
-class Student {
-    static testParam = 10;
-
-    constructor(public name: string, public age: number ) {}
-
-    sayHi() {
-        console.log(this.name);
-    }
-
-    static showStudent(s: Student[]) {
-        console.log(s);
-        console.log(this.testParam);
-    }
-}
-
-let sObj = new Student('Evgene', 33);
-//console.log(sObj)
-//Student.showStudent(sObj);
-console.dir(Student)
+// class Student {
+//     static testParam = 10;
+//
+//     constructor(public name: string, public age: number ) {}
+//
+//     sayHi() {
+//         console.log(this.name);
+//     }
+//
+//     static showStudent(s: Student[]) {
+//         console.log(s);
+//         console.log(this.testParam);
+//     }
+// }
+//
+// let sObj = new Student('Evgene', 33);
+// //console.log(sObj)
+// //Student.showStudent(sObj);
+// console.dir(Student)
 
 
 /////
@@ -181,30 +181,30 @@ console.dir(Student)
 
 /////////
 
-class Test {
-    constructor(public name: string) {}
-
-    sayHi(){}
-}
-
-class Test2 extends Test {
-    constructor(public name: string, public age: number) {
-        super(name);
-    }
-
-    sayBye() {}
-}
-
-class Test3 extends Test2 {
-    constructor(public name: string, public age: number, public city: string) {
-        super(name, age);
-    }
-
-    sayCity(){}
-}
-
-let obj = new Test3('Evgen', 33, 'Minsk');
-console.log(obj);
+// class Test {
+//     constructor(public name: string) {}
+//
+//     sayHi(){}
+// }
+//
+// class Test2 extends Test {
+//     constructor(public name: string, public age: number) {
+//         super(name);
+//     }
+//
+//     sayBye() {}
+// }
+//
+// class Test3 extends Test2 {
+//     constructor(public name: string, public age: number, public city: string) {
+//         super(name, age);
+//     }
+//
+//     sayCity(){}
+// }
+//
+// let obj = new Test3('Evgen', 33, 'Minsk');
+// console.log(obj);
 
 // Task 01
 // Создайте структуру с именем student, содержащую поля: имя и фамилия, номер группы, успеваемость (массив из пяти элементов).

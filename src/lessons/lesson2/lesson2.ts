@@ -1,4 +1,4 @@
-console.log('lesson 2');
+// console.log('lesson 2');
 
 // Lexical environment
 // http://jsflow.org/docs/lex-env/
@@ -63,27 +63,27 @@ console.log('lesson 2');
 export default () => {};
 
 
-function superSum(num: number) {
-    if (num <= 0) return 0;
-    if (num === 1) return (n: number) => n;
-
-    let _arguments: number[] = [];
-
-    function helper(...args: number[]) {
-        _arguments = [..._arguments, ...args];
-        if (_arguments.length >= num) {
-            _arguments.length = num;
-            return _arguments.reduce( (acc, number) => acc + number);
-        } else {
-            return helper;
-        }
-    }
-    return helper;
-}
-
-//@ts-ignore
-console.log(superSum(4)(2)(5)(3));
-//@ts-ignore
-console.log(superSum(3)(2,5,3));
-//@ts-ignore
-console.log(superSum(3)(2,5)(3,9));
+// function superSum(num: number) {
+//     if (num <= 0) return 0;
+//     if (num === 1) return (n: number) => n;
+//
+//     let _arguments: number[] = [];
+//
+//     function helper(...args: number[]) {
+//         _arguments = [..._arguments, ...args];
+//         if (_arguments.length >= num) {
+//             _arguments.length = num;
+//             return _arguments.reduce( (acc, number) => acc + number);
+//         } else {
+//             return helper;
+//         }
+//     }
+//     return helper;
+// }
+//
+// //@ts-ignore
+// console.log(superSum(4)(2)(5)(3));
+// //@ts-ignore
+// console.log(superSum(3)(2,5,3));
+// //@ts-ignore
+// console.log(superSum(3)(2,5)(3,9));
