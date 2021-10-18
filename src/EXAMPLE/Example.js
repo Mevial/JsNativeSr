@@ -1,4 +1,5 @@
-import {log} from "util";
+import React, {useEffect, useState} from "react";
+import {connect, useSelector} from "react-redux";
 
 console.log('EXAMPLE')
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -385,3 +386,69 @@ foo()
 // spot.run();
 // spot.wag();
 // barnaby.sit();
+
+
+// const pr1 = Promise.reject(12)
+// const pr2 = Promise.resolve(13)
+//
+// pr1.then(r => console.log(r))
+// pr2.then(r => console.log(r))
+
+// const pr1 = new Promise((res, rej) => {
+//     res(12)
+// })
+// pr1.then(res => console.log(res))
+
+// let a = 100;
+// let say = () => {
+//     a = 200
+// }
+// say()
+// console.log(a)
+
+// (function SpanComponent() {
+//     const [c, setC] = useState(1)
+//     useEffect(() => {
+//         console.log('TICK')
+//         let interval =  setInterval(() =>
+//             setC(c + 1), 1000)
+//
+//         return () => {
+//             clearInterval(interval)
+//         }
+//     }, [])
+//
+//     return <span>{c}</span>
+//
+//
+// })()
+
+// function spanComponent() {
+//     const state = useSelector((s) => s)
+//     return <div>
+//         {[...new Array(100)].map((_, index) => <div>{index}</div>)}
+//         <span>{state.settings.isAuth}</span>
+//     </div>
+//     let mstp = (state) => state
+//     connect(mstp)(spanComponent)
+// }
+// тут нужно было доставать весь стейт, а иначе будет всегда перерисовка при изменении стейта!
+
+
+// var api = {}
+//
+// const numbers = [1, 2, 3, 4, 5]
+//
+// function f() {
+//     let promiseArray = []
+//     for (let i = 0; i < numbers.length; i++) {
+//         const pr = api.sendNumber(numbers[i])
+//         promiseArray.push(pr)
+//     }
+//     return Promise.all(promiseArray)
+// }
+// сверху долгий вариант снизу быстрый
+// const f2 = () => Promise.all(numbers.map(n => api.sendNumber(n)))
+//
+// f().then(res => console.log('READY'))
+
